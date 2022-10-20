@@ -14,7 +14,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <LocomotiveScrollProvider
-        options={{ smooth: true }}
+        options={{
+          smooth: true,
+          multiplier: 0.5, // speed control
+        }}
         watch={[asPath]}
         containerRef={containerRef}
       >
