@@ -13,8 +13,19 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      <LocomotiveScrollProvider options={{ smooth: true }} watch={[route]}>
-        <div data-scroll-container className="container" ref={containerRef}>
+      <LocomotiveScrollProvider
+        options={{ smooth: true }}
+        watch={[route]}
+        containerRef={containerRef}
+      >
+        <div
+          data-scroll-container
+          ref={containerRef}
+          className="container"
+          // important!!
+          // Fix "Elements disappearing when scroll back to the top #361" bug
+          style={{ perspective: '1px' }}
+        >
           <Component {...pageProps} />
         </div>
       </LocomotiveScrollProvider>
