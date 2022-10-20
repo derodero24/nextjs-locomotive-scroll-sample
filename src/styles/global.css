@@ -19,3 +19,5 @@
     @apply cursor-pointer text-xl duration-100 hover:opacity-75;
   }
 }
+
+@import '../../node_modules/locomotive-scroll/dist/locomotive-scroll.css';
