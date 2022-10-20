@@ -9,13 +9,13 @@ import type { AppProps } from 'next/app';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { route } = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <ThemeProvider attribute="class">
       <LocomotiveScrollProvider
         options={{ smooth: true }}
-        watch={[route]}
+        watch={[asPath]}
         containerRef={containerRef}
       >
         <div
