@@ -5,11 +5,7 @@ import Section from '../components/sections/Section';
 
 import type { NextPage } from 'next';
 
-const ENV = process.env.NEXT_PUBLIC_ENV;
-
 const Home: NextPage = () => {
-  console.log('stage =', ENV);
-
   return (
     <Layout>
       <Head>
