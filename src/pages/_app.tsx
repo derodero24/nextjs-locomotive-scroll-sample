@@ -21,6 +21,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         watch={[asPath]}
         containerRef={containerRef}
       >
+        {/* fixed elements must be placed outside the data-scroll-container */}
+        {/* <div className='fixed ...'/> */}
+
         <div
           data-scroll-container
           ref={containerRef}

@@ -6,7 +6,8 @@ const withPWA = require('next-pwa')({
 });
 
 const nextConfig = {
-  reactStrictMode: true,
+  // commentout for the Bug of locomotive-scroll scrollTo()
+  // reactStrictMode: true,
 };
 
 module.exports = withPWA(nextConfig);

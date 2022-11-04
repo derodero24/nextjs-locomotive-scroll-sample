@@ -1,11 +1,20 @@
 import Head from 'next/head';
+import { IoMdArrowUp } from 'react-icons/io';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 import Layout from '../components/layouts/Layout';
 import Section from '../components/sections/Section';
 
+import type LocomotiveScroll from 'locomotive-scroll';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
+  const ls = useLocomotiveScroll();
+
+  const backToTop = () => {
+    (ls.scroll as LocomotiveScroll).scrollTo(0, { duration: 1_000 });
+  };
+
   return (
     <Layout>
       <Head>
@@ -32,8 +41,14 @@ const Home: NextPage = () => {
           data-scroll-speed="-1"
         />
 
-        <div className="h-[80vh] flex items-center justify-center text-2xl">
-          Margin for checking behavior.
+        <div className="h-[80vh] flex flex-col items-center justify-center text-2xl">
+          <p>Back to Top</p>
+          <a
+            onClick={backToTop}
+            className="mt-4 p-2 rounded-full bg-blue-500 text-white "
+          >
+            <IoMdArrowUp />
+          </a>
         </div>
       </div>
     </Layout>
